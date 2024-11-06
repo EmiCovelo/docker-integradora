@@ -1,6 +1,6 @@
 # Fundamentos y usos prácticos de Docker
 
-## Entregable trabajo integrador: [Su nombre y apellido]
+## Entregable trabajo integrador: Emiliano Covelo
 
 
 ## Parte 1 - Conteinerizar una Aplicación
@@ -11,12 +11,12 @@
 - Ejecute el comando correspondiente para buildear la imágen. Elija un nombre de imágen y un tag acorde. 
 
     ```bash
-    # Inserte aquí el comando utilizado para buildear la imágen
+    docker build -t entrega_final:v1.0 .
     ```
 - Muestre cuánto espacio ocupa la imaǵen una vez creada.
 
     ```bash
-    # Inserte aquí el comando utilizado para ver el espacio que ocupa
+    docker images
     ```
 - ¿Puede hacer algo para optimizar o mejorar la imágen?. Describa qué modificaciones puede hacer para optimizar la imágen.
 
