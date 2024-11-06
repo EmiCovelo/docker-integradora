@@ -20,7 +20,20 @@
     ```
 - ¿Puede hacer algo para optimizar o mejorar la imágen?. Describa qué modificaciones puede hacer para optimizar la imágen.
 
-_(Describa que modificaciones podría hacer para mejorar la imágen de ser posible)_
+    Para optimizar el comando `COPY ./app .` se puede dividir en dos. Primero, copiamos los archivos de administración de paquetes (/app/package.jsony /app/yarn.lock). 
+    Luego, instalamos las dependencias. 
+    Por último, copiamos el código fuente del proyecto, que está sujeto a cambios frecuentes.
+    El código final quedaría: 
+    ```bash
+    # Copiamos los archivos de administración de paquetes
+    COPY /app/package.json /app/yarn.lock .
+
+    # Instalamos las dependencias del proyecto
+    RUN yarn install --production
+
+    # Copiamos los archivos del proyecto al contenedor
+    COPY ./app .
+    ```
 
 
 
