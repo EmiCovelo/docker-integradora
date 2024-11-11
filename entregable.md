@@ -44,18 +44,22 @@ Una vez creada la imágen, debería ser capaz de correr la aplicación.
 
 - Ejecute un comando para poder correr la aplicación.
     ```bash
-    # Inserte aquí el comando para ejecutar la aplicación
+    docker run -d -p 8080:3000 entrega_final:v1.0
     ```
 - Explique el comando y cada parámetro enviado.
 
-    _(Realice una explicación de los parámetros aquí)_
+   Se utiliza el comando `docker run` para correr la aplicación. Los paramétros que se le pasan al comando son:
+
+        -d: Indica que el contenedor se ejecutará como daemon.
+        -p: Indica que se publicarán puertos hacia afuera del contenedor. En este caso, 8080:30000 mapea el puerto 8080 de nuestra PC al puerto 30000 del contenedor.
+  
 - Muestre una captura de pantalla o un copy-paste del contenedor corriendo.
 
-    _(Inserte aquí la captura de pantalla o los la salida de la shell con el contenedor corriendo)_
+    ![image](https://github.com/user-attachments/assets/8e28cb64-4e24-4932-af9a-0af5f83dad66)
 
 - Adjunte una captura de pantalla con la aplicación funcionando con la URL utilizada para acceder.
 
-    ![Screenshot](./imgs/img_placeholder.png)
+    ![image](https://github.com/user-attachments/assets/79fee30c-6440-4e22-9017-aed0b5a87354)
 
 
 ## Parte 2 - Actualizar aplicación (imágen)
