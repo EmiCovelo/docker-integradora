@@ -108,12 +108,14 @@ Para compartir la imágen de la aplicación usaremos la registry de [DockerHub](
 - Escriba los comandos necesarios para que sea posible subir la imaǵen correctamente.
 
     ```bash
-    # Inserte aquí los comandos utilizados
+    docker image tag entrega_final:v1.1-primeros_cambios emicovelo/entrega_final:v1.1-primeros_cambios
+    docker login
+    docker push emicovelo/entrega_final:v1.1-primeros_cambios
     ```
 
 - Comparta la URL de DockerHub para que pueda ser posible probar y descargar su imágen.
 
-    [Actualice el link](https://docker.idepba.com.ar)
+    https://hub.docker.com/repository/docker/emicovelo/entrega_final/general
 
 - Agregue un _overview_ para el repositorio de Dockerhub con instrucciones para correr la imágen y todo lo que considere necesario para que un tercero pueda ejecutar la imágen.
 
