@@ -69,12 +69,13 @@ Una vez creada la imágen, debería ser capaz de correr la aplicación.
 - Ejecutemos los comando necesarios para que la aplicación tome los cambios. Realice un etiquetado (tag) coherente respecto a los cambios en la imágen
     
     ```bash
-    # Inserte aquí los comando necesarios
+    docker build -t entrega_final:v1.1-primeros_cambios .
+    docker run -d -p 8080:3000 entrega_final:v1.1-primeros_cambios
     ```
 
 - Mostrar captura de pantalla con la app corriendo con las modificaciones realizadas.
 
-    ![Screenshot](./imgs/img_placeholder.png)
+    ![image](https://github.com/user-attachments/assets/db130156-f46e-4eb2-a8bb-1f35f6183d41)
 
 > La actualizaciones realizadas, dejan a la primera versión obsoleta
 
