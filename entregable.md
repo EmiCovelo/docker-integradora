@@ -84,13 +84,16 @@ Una vez creada la imágen, debería ser capaz de correr la aplicación.
 - Elimine la imágen y el contenedor hecho en el punto anterior
 
     ```bash
-    # Inserte los comando utilizados para eliminar la imágen
+    docker stop cranky_zhukovsky
+    docker rm cranky_zhukovsky
+    docker image prune -a
     ```
 
 - Liste las imágenes y contenedores para ver que ya no existen.
 
     ```bash
-    # Inserte comando para realizar lo solicitado
+    docker ps
+    docker images
     ```
 
 
