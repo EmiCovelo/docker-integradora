@@ -137,6 +137,7 @@ Los datos en esta APP se guardan en un archivo `/etc/todos/todo.db`.
     El segundo comando crea un nueco contenedor de la misma forma que lo veníamos haciendo y además, con el comando `-v volumen_app:/etc/todos/` montamos el volumen recién creado en el directorio /etc/todos/ dentro del contenedor
 
 - Decida que tipo de persistencia es la adecuada para la app.
+  
   En este caso, se utilizó la técnica de volumenes por su simpleza y practicidad. Algunas ventajas del uso de volúmenes son:
   - Fácil realizar copias de seguridad o migrar volúmenes respecto a otro tipo de mounts.
   - Se pueden compartir de forma más segura entre varios contenedores.
