@@ -153,17 +153,18 @@ Los datos en esta APP se guardan en un archivo `/etc/todos/todo.db`.
 - [Crear una red](https://docker.idepba.com.ar/clase4.html#/network_create) para conexión entre los contenedores que servirá también para conectar a la aplicación.
 
     ```bash
-    # Inserte el comando utilizado
+    docker network create nueva_red
     ```
 - [Crear un nuevo volumen](https://docker.idepba.com.ar/clase4.html#/volume_create) para persistir los datos de la base MySQL. El path donde se almacenan los datos en el contenedor MySQL es `/var/lib/mysql`.
     
     ```bash
-    # Comando para crear nuevo volumen utilizado
+    docker volume create volumen_myqsl
     ```
 - Iniciar el contenedor de la aplicación utilizando el comando `docker run` enviando las variables de entornos necesarias para la conexión con la base de datos.
 
     ```bash
-    # Inserte el comando necesario para realizar lo solicitado
+    docker run --name contenedor-mysql  -h contenedor-mysql -v volumen_mysql:/var/lib/mysql --network nueva_red -e MYSQL_ROOT_PASSWORD=pwd123 -e MYSQL_DATABASE=todos_db -d mysql:8.0
+    docker run -d -p 8080:3000 -v volumen_app:/etc/todos/ --name contenedor-app --network nueva_red --env MYSQL_HOST=contenedor-mysql --env MYSQL_USER=root --env MYSQL_PASSWORD=pwd123 --env MYSQL_DB=todos_db entrega_final:v1.1-primeros_cambios
     ```
 
 > [!TIP]
