@@ -178,7 +178,31 @@ Los datos en esta APP se guardan en un archivo `/etc/todos/todo.db`.
 En la carpeta raíz del proyecto, cree un archivo de docker compose `compose.yml` o `docker-compose.yml`. Adicionalmente pégue el contenido del archivo `compose` en este lugar:
 
 ```compose
-# Copie aquí el contenido del archivo compose.
+services:
+        app:
+            image: emicovelo/entrega_final:v1.1-primeros_cambios
+            container_name: contenedor-app
+            ports:
+                - "8080:3000"
+            volumes:
+                - volumen_app:/etc/todos/
+            networks:
+                - nueva_red
+        db:
+            image: mysql:8.0
+            container_name: contenedor-mysql
+            volumes:
+                - volumen_mysql:/var/lib/mysql
+            networks:
+                - nueva_red
+            environment:            
+                MYSQL_DATABASE: todos_db
+                MYSQL_ROOT_PASSWORD: pwd123
+    networks:
+        nueva_red:
+    volumes:
+        volumen_app:
+        volumen_mysql:
 ```
 
 > [!IMPORTANT]  
